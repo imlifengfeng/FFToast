@@ -158,7 +158,7 @@ The default 3 seconds after the automatic disappear, slide up the pop-up message
 ##About
 
 Author：
-[imlifengfeng](http://www.imlifengfeng.com/blog/)
+[imlifengfeng](http://www.imlifengfeng.com/blog/)  
 WeiBo：
 [@imlifengfeng](http://www.weibo.com/devfeng)
 
@@ -319,7 +319,7 @@ toast.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f 
 ##About
 
 Author：
-[imlifengfeng](http://www.imlifengfeng.com/blog/)
+[imlifengfeng](http://www.imlifengfeng.com/blog/)  
 微博：
 [@imlifengfeng](http://www.weibo.com/devfeng)
 
