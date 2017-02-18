@@ -316,15 +316,15 @@ toast.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f 
 隐藏消息通知：
 默认3秒后自动消失，向上滑动弹出的消息通知它也会消失。
 
-##About
+##关于
 
-Author：
+作者：
 [imlifengfeng](http://www.imlifengfeng.com/blog/)  
 微博：
 [@imlifengfeng](http://www.weibo.com/devfeng)
 
-## License
+## 许可
 
-Usage is provided under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a> License. See <a href="https://github.com/imlifengfeng/FFToast/blob/master/LICENSE">LICENSE</a> for full details.
+该项目在 <a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a> 许可协议下使用.  有关详细信息，请参阅 <a href="https://github.com/imlifengfeng/FFToast/blob/master/LICENSE">LICENSE</a>.
 
 
