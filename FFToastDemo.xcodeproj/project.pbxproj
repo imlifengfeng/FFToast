@@ -64,8 +64,8 @@
 		6C8235AE1E529BEE004E389E /* FFToastDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFToastDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C8235B21E529BEE004E389E /* FFToastDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFToastDemoUITests.m; sourceTree = "<group>"; };
 		6C8235B41E529BEE004E389E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C8235E51E53034A004E389E /* FFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFToast.h; path = Classes/FFToast.h; sourceTree = "<group>"; };
-		6C8235E61E53034A004E389E /* FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFToast.m; path = Classes/FFToast.m; sourceTree = "<group>"; };
+		6C8235E51E53034A004E389E /* FFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFToast.h; sourceTree = "<group>"; };
+		6C8235E61E53034A004E389E /* FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFToast.m; sourceTree = "<group>"; };
 		6CBFDD651E54A01700B15524 /* fftoast_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fftoast_error.png; sourceTree = "<group>"; };
 		6CBFDD661E54A01700B15524 /* fftoast_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_error@2x.png"; sourceTree = "<group>"; };
 		6CBFDD671E54A01700B15524 /* fftoast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_error@3x.png"; sourceTree = "<group>"; };
@@ -111,8 +111,7 @@
 				6C8235E51E53034A004E389E /* FFToast.h */,
 				6C8235E61E53034A004E389E /* FFToast.m */,
 			);
-			name = Classes;
-			path = ../../FFToast;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		6C8235811E529BEE004E389E = {
@@ -184,7 +183,8 @@
 				6C3C148A1E57713E00DF2769 /* Classes */,
 				6CBFDD641E54A01700B15524 /* Assets */,
 			);
-			path = FFToast;
+			name = FFToast;
+			path = ../../../iOSProject/FFToastDemo/FFToast;
 			sourceTree = "<group>";
 		};
 		6CBFDD641E54A01700B15524 /* Assets */ = {
