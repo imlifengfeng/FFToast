@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = 'message notification for iOS.'
   s.description  = 'This is a simple extension of an iOS message notification that can be used to pop up a prompt at the top or bottom of the screen. You can customize it according to their own display.'
   s.homepage     = "https://github.com/imlifengfeng/FFToast"
-  s.screenshots  = 'https://github.com/imlifengfeng/FFToast/blob/master/screenshots/screenshots_1.png', 'https://github.com/imlifengfeng/FFToast/blob/master/screenshots/screenshots_2.png', 'https://github.com/imlifengfeng/FFToast/blob/master/screenshots/screenshots_3.png', 'https://github.com/imlifengfeng/FFToast/blob/master/screenshots/screenshots_4.png', 'https://github.com/imlifengfeng/FFToast/blob/master/screenshots/screenshots_5.png'
+  s.screenshots  = 'http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img1.png', 'http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img2.png', 'http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img3.png', 'http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img4.png', 'http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img5.png'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "imlifengfeng" => "imlifengfeng@gmail.com" }
   s.source       = { :git => 'https://github.com/imlifengfeng/FFToast.git', :tag => s.version.to_s }
