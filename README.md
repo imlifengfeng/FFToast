@@ -6,6 +6,7 @@
 This is a simple extension of an iOS message notifications that can be used to pop up a prompt at the top or bottom of the screen. You can customize it according to their own display.
 
 <img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_demo.gif">
+<img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_screenshots.jpg">
 
 # English instructions
 
@@ -319,7 +320,7 @@ toast.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f 
 
 Author：
 [imlifengfeng](http://www.imlifengfeng.com/blog/)
-WeiBo：
+微博：
 [@imlifengfeng](http://www.weibo.com/devfeng)
 
 ## License
