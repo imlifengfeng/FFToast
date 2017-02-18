@@ -204,7 +204,7 @@
 				6CBFDD701E54A01700B15524 /* fftoast_warning@3x.png */,
 			);
 			name = Assets;
-			path = ../../FFToast/Assets;
+			path = ../../../MyGithub/FFToast/FFToast/Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

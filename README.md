@@ -6,11 +6,6 @@
 This is a simple extension of an iOS message notifications that can be used to pop up a prompt at the top or bottom of the screen. You can customize it according to their own display.
 
 <img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_demo.gif">
-<img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img1.png">
-<img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img2.png">
-<img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img3.png">
-<img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img4.png">
-<img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_img5.png">
 
 # English instructions
 
