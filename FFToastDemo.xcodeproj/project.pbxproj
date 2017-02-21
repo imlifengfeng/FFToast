@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344A29381E5C84CA009383F7 /* FFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 344A29371E5C84CA009383F7 /* FFToast.m */; };
+		344A29451E5C84DE009383F7 /* fftoast_error.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29391E5C84DE009383F7 /* fftoast_error.png */; };
+		344A29461E5C84DE009383F7 /* fftoast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A293A1E5C84DE009383F7 /* fftoast_error@2x.png */; };
+		344A29471E5C84DE009383F7 /* fftoast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A293B1E5C84DE009383F7 /* fftoast_error@3x.png */; };
+		344A29481E5C84DE009383F7 /* fftoast_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A293C1E5C84DE009383F7 /* fftoast_info.png */; };
+		344A29491E5C84DE009383F7 /* fftoast_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A293D1E5C84DE009383F7 /* fftoast_info@2x.png */; };
+		344A294A1E5C84DE009383F7 /* fftoast_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A293E1E5C84DE009383F7 /* fftoast_info@3x.png */; };
+		344A294B1E5C84DE009383F7 /* fftoast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A293F1E5C84DE009383F7 /* fftoast_success.png */; };
+		344A294C1E5C84DE009383F7 /* fftoast_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29401E5C84DE009383F7 /* fftoast_success@2x.png */; };
+		344A294D1E5C84DE009383F7 /* fftoast_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29411E5C84DE009383F7 /* fftoast_success@3x.png */; };
+		344A294E1E5C84DE009383F7 /* fftoast_warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29421E5C84DE009383F7 /* fftoast_warning.png */; };
+		344A294F1E5C84DE009383F7 /* fftoast_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29431E5C84DE009383F7 /* fftoast_warning@2x.png */; };
+		344A29501E5C84DE009383F7 /* fftoast_warning@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29441E5C84DE009383F7 /* fftoast_warning@3x.png */; };
 		6C82358F1E529BEE004E389E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C82358E1E529BEE004E389E /* main.m */; };
 		6C8235921E529BEE004E389E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235911E529BEE004E389E /* AppDelegate.m */; };
 		6C8235951E529BEE004E389E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235941E529BEE004E389E /* ViewController.m */; };
@@ -15,19 +28,6 @@
 		6C82359D1E529BEE004E389E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C82359B1E529BEE004E389E /* LaunchScreen.storyboard */; };
 		6C8235A81E529BEE004E389E /* FFToastDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235A71E529BEE004E389E /* FFToastDemoTests.m */; };
 		6C8235B31E529BEE004E389E /* FFToastDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235B21E529BEE004E389E /* FFToastDemoUITests.m */; };
-		6C8235E71E53034A004E389E /* FFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235E61E53034A004E389E /* FFToast.m */; };
-		6CBFDD711E54A01700B15524 /* fftoast_error.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD651E54A01700B15524 /* fftoast_error.png */; };
-		6CBFDD721E54A01700B15524 /* fftoast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD661E54A01700B15524 /* fftoast_error@2x.png */; };
-		6CBFDD731E54A01700B15524 /* fftoast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD671E54A01700B15524 /* fftoast_error@3x.png */; };
-		6CBFDD741E54A01700B15524 /* fftoast_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD681E54A01700B15524 /* fftoast_info.png */; };
-		6CBFDD751E54A01700B15524 /* fftoast_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD691E54A01700B15524 /* fftoast_info@2x.png */; };
-		6CBFDD761E54A01700B15524 /* fftoast_info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD6A1E54A01700B15524 /* fftoast_info@3x.png */; };
-		6CBFDD771E54A01700B15524 /* fftoast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD6B1E54A01700B15524 /* fftoast_success.png */; };
-		6CBFDD781E54A01700B15524 /* fftoast_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD6C1E54A01700B15524 /* fftoast_success@2x.png */; };
-		6CBFDD791E54A01700B15524 /* fftoast_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD6D1E54A01700B15524 /* fftoast_success@3x.png */; };
-		6CBFDD7A1E54A01700B15524 /* fftoast_warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD6E1E54A01700B15524 /* fftoast_warning.png */; };
-		6CBFDD7B1E54A01700B15524 /* fftoast_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD6F1E54A01700B15524 /* fftoast_warning@2x.png */; };
-		6CBFDD7C1E54A01700B15524 /* fftoast_warning@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CBFDD701E54A01700B15524 /* fftoast_warning@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +48,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		344A29361E5C84CA009383F7 /* FFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFToast.h; path = FFToast/Classes/FFToast.h; sourceTree = SOURCE_ROOT; };
+		344A29371E5C84CA009383F7 /* FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFToast.m; path = FFToast/Classes/FFToast.m; sourceTree = SOURCE_ROOT; };
+		344A29391E5C84DE009383F7 /* fftoast_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fftoast_error.png; path = FFToast/Assets/fftoast_error.png; sourceTree = SOURCE_ROOT; };
+		344A293A1E5C84DE009383F7 /* fftoast_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_error@2x.png"; path = "FFToast/Assets/fftoast_error@2x.png"; sourceTree = SOURCE_ROOT; };
+		344A293B1E5C84DE009383F7 /* fftoast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_error@3x.png"; path = "FFToast/Assets/fftoast_error@3x.png"; sourceTree = SOURCE_ROOT; };
+		344A293C1E5C84DE009383F7 /* fftoast_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fftoast_info.png; path = FFToast/Assets/fftoast_info.png; sourceTree = SOURCE_ROOT; };
+		344A293D1E5C84DE009383F7 /* fftoast_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_info@2x.png"; path = "FFToast/Assets/fftoast_info@2x.png"; sourceTree = SOURCE_ROOT; };
+		344A293E1E5C84DE009383F7 /* fftoast_info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_info@3x.png"; path = "FFToast/Assets/fftoast_info@3x.png"; sourceTree = SOURCE_ROOT; };
+		344A293F1E5C84DE009383F7 /* fftoast_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fftoast_success.png; path = FFToast/Assets/fftoast_success.png; sourceTree = SOURCE_ROOT; };
+		344A29401E5C84DE009383F7 /* fftoast_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_success@2x.png"; path = "FFToast/Assets/fftoast_success@2x.png"; sourceTree = SOURCE_ROOT; };
+		344A29411E5C84DE009383F7 /* fftoast_success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_success@3x.png"; path = "FFToast/Assets/fftoast_success@3x.png"; sourceTree = SOURCE_ROOT; };
+		344A29421E5C84DE009383F7 /* fftoast_warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fftoast_warning.png; path = FFToast/Assets/fftoast_warning.png; sourceTree = SOURCE_ROOT; };
+		344A29431E5C84DE009383F7 /* fftoast_warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_warning@2x.png"; path = "FFToast/Assets/fftoast_warning@2x.png"; sourceTree = SOURCE_ROOT; };
+		344A29441E5C84DE009383F7 /* fftoast_warning@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_warning@3x.png"; path = "FFToast/Assets/fftoast_warning@3x.png"; sourceTree = SOURCE_ROOT; };
 		6C82358A1E529BEE004E389E /* FFToastDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFToastDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C82358E1E529BEE004E389E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C8235901E529BEE004E389E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,20 +78,6 @@
 		6C8235AE1E529BEE004E389E /* FFToastDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFToastDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C8235B21E529BEE004E389E /* FFToastDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFToastDemoUITests.m; sourceTree = "<group>"; };
 		6C8235B41E529BEE004E389E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C8235E51E53034A004E389E /* FFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFToast.h; sourceTree = "<group>"; };
-		6C8235E61E53034A004E389E /* FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFToast.m; sourceTree = "<group>"; };
-		6CBFDD651E54A01700B15524 /* fftoast_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fftoast_error.png; sourceTree = "<group>"; };
-		6CBFDD661E54A01700B15524 /* fftoast_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_error@2x.png"; sourceTree = "<group>"; };
-		6CBFDD671E54A01700B15524 /* fftoast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_error@3x.png"; sourceTree = "<group>"; };
-		6CBFDD681E54A01700B15524 /* fftoast_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fftoast_info.png; sourceTree = "<group>"; };
-		6CBFDD691E54A01700B15524 /* fftoast_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_info@2x.png"; sourceTree = "<group>"; };
-		6CBFDD6A1E54A01700B15524 /* fftoast_info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_info@3x.png"; sourceTree = "<group>"; };
-		6CBFDD6B1E54A01700B15524 /* fftoast_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fftoast_success.png; sourceTree = "<group>"; };
-		6CBFDD6C1E54A01700B15524 /* fftoast_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_success@2x.png"; sourceTree = "<group>"; };
-		6CBFDD6D1E54A01700B15524 /* fftoast_success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_success@3x.png"; sourceTree = "<group>"; };
-		6CBFDD6E1E54A01700B15524 /* fftoast_warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fftoast_warning.png; sourceTree = "<group>"; };
-		6CBFDD6F1E54A01700B15524 /* fftoast_warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_warning@2x.png"; sourceTree = "<group>"; };
-		6CBFDD701E54A01700B15524 /* fftoast_warning@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fftoast_warning@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +108,8 @@
 		6C3C148A1E57713E00DF2769 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6C8235E51E53034A004E389E /* FFToast.h */,
-				6C8235E61E53034A004E389E /* FFToast.m */,
+				344A29361E5C84CA009383F7 /* FFToast.h */,
+				344A29371E5C84CA009383F7 /* FFToast.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -190,18 +190,18 @@
 		6CBFDD641E54A01700B15524 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				6CBFDD651E54A01700B15524 /* fftoast_error.png */,
-				6CBFDD661E54A01700B15524 /* fftoast_error@2x.png */,
-				6CBFDD671E54A01700B15524 /* fftoast_error@3x.png */,
-				6CBFDD681E54A01700B15524 /* fftoast_info.png */,
-				6CBFDD691E54A01700B15524 /* fftoast_info@2x.png */,
-				6CBFDD6A1E54A01700B15524 /* fftoast_info@3x.png */,
-				6CBFDD6B1E54A01700B15524 /* fftoast_success.png */,
-				6CBFDD6C1E54A01700B15524 /* fftoast_success@2x.png */,
-				6CBFDD6D1E54A01700B15524 /* fftoast_success@3x.png */,
-				6CBFDD6E1E54A01700B15524 /* fftoast_warning.png */,
-				6CBFDD6F1E54A01700B15524 /* fftoast_warning@2x.png */,
-				6CBFDD701E54A01700B15524 /* fftoast_warning@3x.png */,
+				344A29391E5C84DE009383F7 /* fftoast_error.png */,
+				344A293A1E5C84DE009383F7 /* fftoast_error@2x.png */,
+				344A293B1E5C84DE009383F7 /* fftoast_error@3x.png */,
+				344A293C1E5C84DE009383F7 /* fftoast_info.png */,
+				344A293D1E5C84DE009383F7 /* fftoast_info@2x.png */,
+				344A293E1E5C84DE009383F7 /* fftoast_info@3x.png */,
+				344A293F1E5C84DE009383F7 /* fftoast_success.png */,
+				344A29401E5C84DE009383F7 /* fftoast_success@2x.png */,
+				344A29411E5C84DE009383F7 /* fftoast_success@3x.png */,
+				344A29421E5C84DE009383F7 /* fftoast_warning.png */,
+				344A29431E5C84DE009383F7 /* fftoast_warning@2x.png */,
+				344A29441E5C84DE009383F7 /* fftoast_warning@3x.png */,
 			);
 			name = Assets;
 			path = ../../../MyGithub/FFToast/FFToast/Assets;
@@ -316,21 +316,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CBFDD721E54A01700B15524 /* fftoast_error@2x.png in Resources */,
-				6CBFDD7B1E54A01700B15524 /* fftoast_warning@2x.png in Resources */,
-				6CBFDD711E54A01700B15524 /* fftoast_error.png in Resources */,
-				6CBFDD751E54A01700B15524 /* fftoast_info@2x.png in Resources */,
-				6CBFDD7A1E54A01700B15524 /* fftoast_warning.png in Resources */,
-				6CBFDD731E54A01700B15524 /* fftoast_error@3x.png in Resources */,
+				344A29461E5C84DE009383F7 /* fftoast_error@2x.png in Resources */,
+				344A294F1E5C84DE009383F7 /* fftoast_warning@2x.png in Resources */,
+				344A29451E5C84DE009383F7 /* fftoast_error.png in Resources */,
+				344A29491E5C84DE009383F7 /* fftoast_info@2x.png in Resources */,
+				344A294E1E5C84DE009383F7 /* fftoast_warning.png in Resources */,
+				344A29471E5C84DE009383F7 /* fftoast_error@3x.png in Resources */,
 				6C82359D1E529BEE004E389E /* LaunchScreen.storyboard in Resources */,
-				6CBFDD771E54A01700B15524 /* fftoast_success.png in Resources */,
+				344A294B1E5C84DE009383F7 /* fftoast_success.png in Resources */,
 				6C82359A1E529BEE004E389E /* Assets.xcassets in Resources */,
-				6CBFDD7C1E54A01700B15524 /* fftoast_warning@3x.png in Resources */,
-				6CBFDD761E54A01700B15524 /* fftoast_info@3x.png in Resources */,
-				6CBFDD741E54A01700B15524 /* fftoast_info.png in Resources */,
+				344A29501E5C84DE009383F7 /* fftoast_warning@3x.png in Resources */,
+				344A294A1E5C84DE009383F7 /* fftoast_info@3x.png in Resources */,
+				344A29481E5C84DE009383F7 /* fftoast_info.png in Resources */,
 				6C8235981E529BEE004E389E /* Main.storyboard in Resources */,
-				6CBFDD781E54A01700B15524 /* fftoast_success@2x.png in Resources */,
-				6CBFDD791E54A01700B15524 /* fftoast_success@3x.png in Resources */,
+				344A294C1E5C84DE009383F7 /* fftoast_success@2x.png in Resources */,
+				344A294D1E5C84DE009383F7 /* fftoast_success@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +358,7 @@
 				6C8235951E529BEE004E389E /* ViewController.m in Sources */,
 				6C8235921E529BEE004E389E /* AppDelegate.m in Sources */,
 				6C82358F1E529BEE004E389E /* main.m in Sources */,
-				6C8235E71E53034A004E389E /* FFToast.m in Sources */,
+				344A29381E5C84CA009383F7 /* FFToast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,11 +505,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vishnu Gopal (9W5B2P4YRQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vishnu Gopal (9W5B2P4YRQ)";
 				DEVELOPMENT_TEAM = V8SV58X364;
 				INFOPLIST_FILE = FFToastDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feng.FFToastDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4bad389f-7d8b-4b47-8773-33ba5f3bdae8";
 			};
 			name = Debug;
 		};
@@ -519,6 +523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V8SV58X364;
 				INFOPLIST_FILE = FFToastDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feng.FFToastDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -531,6 +536,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = V8SV58X364;
 				INFOPLIST_FILE = FFToastDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feng.FFToastDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -544,6 +550,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = V8SV58X364;
 				INFOPLIST_FILE = FFToastDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feng.FFToastDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -556,6 +563,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = V8SV58X364;
 				INFOPLIST_FILE = FFToastDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feng.FFToastDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -568,6 +576,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = V8SV58X364;
 				INFOPLIST_FILE = FFToastDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feng.FFToastDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
