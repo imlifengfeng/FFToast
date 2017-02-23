@@ -14,7 +14,6 @@
 //Toast点击回调
 typedef void(^handler)(void);
 
-
 //背景颜色
 @property (strong, nonatomic) UIColor* toastBackgroundColor;
 //Toast标题文字颜色
@@ -39,19 +38,9 @@ typedef void(^handler)(void);
 
 //Toast显示位置
 @property (assign, nonatomic) FFToastPosition toastPosition;
+//Toast显示类型
+@property (assign, nonatomic) FFToastType toastType;
 
-
-
-
-/**
- 创建并显示一个Toast
- 
- @param title 标题
- @param message 消息内容
- @param iconImage 消息icon，toastType不为FFToastTypeDefault时iconImage为空仍然会有相应icon
- @param duration 显示时长
- */
-+ (void)showToastWithTitle:(NSString *)title message:(NSString *)message iconImage:(UIImage*)iconImage duration:(NSTimeInterval)duration toastType:(FFToastType)toastType;
 
 
 /**

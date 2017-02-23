@@ -12,15 +12,15 @@
 typedef NS_ENUM(NSInteger, FFToastType) {
     
     //灰色背景、无图标
-    FFToastTypeDefault = 0,
+    FFToastTypeDefault = 1,
     //绿色背景+成功图标
-    FFToastTypeSuccess = 1,
+    FFToastTypeSuccess = 2,
     //红色背景+错误图标
-    FFToastTypeError = 2,
+    FFToastTypeError = 3,
     //橙色背景+警告图标
-    FFToastTypeWarning = 3,
+    FFToastTypeWarning = 4,
     //灰蓝色背景+信息图标
-    FFToastTypeInfo = 4,
+    FFToastTypeInfo = 5,
     
 };
 

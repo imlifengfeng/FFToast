@@ -20,6 +20,7 @@
 		344A294E1E5C84DE009383F7 /* fftoast_warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29421E5C84DE009383F7 /* fftoast_warning.png */; };
 		344A294F1E5C84DE009383F7 /* fftoast_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29431E5C84DE009383F7 /* fftoast_warning@2x.png */; };
 		344A29501E5C84DE009383F7 /* fftoast_warning@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29441E5C84DE009383F7 /* fftoast_warning@3x.png */; };
+		6C01B3DA1E5F25E500E0D020 /* FFBaseToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C01B3D81E5F25E500E0D020 /* FFBaseToastView.m */; };
 		6C82358F1E529BEE004E389E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C82358E1E529BEE004E389E /* main.m */; };
 		6C8235921E529BEE004E389E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235911E529BEE004E389E /* AppDelegate.m */; };
 		6C8235951E529BEE004E389E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235941E529BEE004E389E /* ViewController.m */; };
@@ -62,6 +63,9 @@
 		344A29421E5C84DE009383F7 /* fftoast_warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fftoast_warning.png; path = FFToast/Assets/fftoast_warning.png; sourceTree = SOURCE_ROOT; };
 		344A29431E5C84DE009383F7 /* fftoast_warning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_warning@2x.png"; path = "FFToast/Assets/fftoast_warning@2x.png"; sourceTree = SOURCE_ROOT; };
 		344A29441E5C84DE009383F7 /* fftoast_warning@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_warning@3x.png"; path = "FFToast/Assets/fftoast_warning@3x.png"; sourceTree = SOURCE_ROOT; };
+		6C01B3D71E5F25E500E0D020 /* FFBaseToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFBaseToastView.h; path = FFToast/Classes/FFBaseToastView.h; sourceTree = SOURCE_ROOT; };
+		6C01B3D81E5F25E500E0D020 /* FFBaseToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFBaseToastView.m; path = FFToast/Classes/FFBaseToastView.m; sourceTree = SOURCE_ROOT; };
+		6C01B3D91E5F25E500E0D020 /* FFConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFConfig.h; path = FFToast/Classes/FFConfig.h; sourceTree = SOURCE_ROOT; };
 		6C82358A1E529BEE004E389E /* FFToastDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFToastDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C82358E1E529BEE004E389E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C8235901E529BEE004E389E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +114,9 @@
 			children = (
 				344A29361E5C84CA009383F7 /* FFToast.h */,
 				344A29371E5C84CA009383F7 /* FFToast.m */,
+				6C01B3D71E5F25E500E0D020 /* FFBaseToastView.h */,
+				6C01B3D81E5F25E500E0D020 /* FFBaseToastView.m */,
+				6C01B3D91E5F25E500E0D020 /* FFConfig.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -359,6 +366,7 @@
 				6C8235921E529BEE004E389E /* AppDelegate.m in Sources */,
 				6C82358F1E529BEE004E389E /* main.m in Sources */,
 				344A29381E5C84CA009383F7 /* FFToast.m in Sources */,
+				6C01B3DA1E5F25E500E0D020 /* FFBaseToastView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

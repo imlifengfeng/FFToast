@@ -36,7 +36,6 @@
 @property (assign, nonatomic) CGSize iconImageSize;
 @property (assign, nonatomic) CGRect toastViewFrame;
 
-@property (assign, nonatomic) FFToastType toastType;
 
 @property handler handler;
 
@@ -48,19 +47,8 @@
 static NSMutableArray* toastArray = nil;
 
 
-+ (void)showToastWithTitle:(NSString *)title message:(NSString *)message iconImage:(UIImage*)iconImage duration:(NSTimeInterval)duration toastType:(FFToastType)toastType{
-    
-    
-    FFBaseToastView *toast = [[FFBaseToastView alloc]initToastWithTitle:title message:message iconImage:iconImage duration:duration toastType:toastType];
-    [toast show];
-    
-}
-
-
-
 - (instancetype)initToastWithTitle:(NSString *)title message:(NSString *)message iconImage:(UIImage*)iconImage{
     
-    [self initToastConfig];
     
     if (!toastArray) {
         toastArray = [NSMutableArray new];
@@ -86,200 +74,37 @@ static NSMutableArray* toastArray = nil;
 }
 
 
-/**
- 初始化一个Toast，包含toastType
- 
- @param title 标题
- @param message 内容
- @param iconImage 图标
- @param duration 显示时长
- @param toastType toast类型
- @return 新建的Toast
- */
-- (instancetype)initToastWithTitle:(NSString *)title message:(NSString *)message iconImage:(UIImage*)iconImage duration:(NSTimeInterval)duration toastType:(FFToastType)toastType{
-    
-    
-    self.toastType = toastType;
-    self.duration = duration;
-    
-    
-    return [self initToastWithTitle:title message:message iconImage:iconImage];
-}
 
 
-
-
-/**
- 初始化Toast基本配置（可以在这里修改一些默认效果）
- */
--(void)initToastConfig{
+-(instancetype)initWithFrame:(CGRect)frame{
     
-    //默认背景色
-    self.toastBackgroundColor = [UIColor darkGrayColor];
-    
-    //根据toastType设置背景色、icon
-    switch (self.toastType) {
-        case FFToastPositionDefault: {
-            self.toastBackgroundColor = [UIColor darkGrayColor];
-            break;
-        }
-        case FFToastTypeSuccess: {
-            self.toastBackgroundColor = [UIColor colorWithRed:31.f/255.f green:177.f/255.f blue:138.f/255.f alpha:1.f];
-            if (!_iconImage) {
-                self.iconImage = [self imageNamed:@"fftoast_success"];
-            }
-            break;
-        }
-        case FFToastTypeError: {
-            self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:91.f/255.f blue:65.f/255.f alpha:1.f];
-            if (!_iconImage) {
-                self.iconImage = [self imageNamed:@"fftoast_error"];
-            }
-            break;
-        }
-        case FFToastTypeWarning: {
-            self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:134.f/255.f blue:0.f/255.f alpha:1.f];
-            if (!_iconImage) {
-                self.iconImage = [self imageNamed:@"fftoast_warning"];
-            }
-            break;
-        }
-        case FFToastTypeInfo: {
-            self.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f blue:122.f/255.f alpha:1.f];
-            if (!_iconImage) {
-                self.iconImage = [self imageNamed:@"fftoast_info"];
-            }
-            break;
-        }
-            
-        default:
-            break;
-    }
-    
-    //TextColor
-    self.titleTextColor = [UIColor whiteColor];
-    self.messageTextColor = [UIColor whiteColor];
-    
-    //TextFont
-    self.titleFont = [UIFont systemFontOfSize:15.f weight:UIFontWeightMedium];
-    self.messageFont = [UIFont systemFontOfSize:15.f];
-    
-    self.toastCornerRadius = 0.f;
-    self.toastAlpha = 1.f;
-    
-    self.dismissToastAnimated = YES;
-    
-    //默认显示3s
-    if (self.duration == 0) {
-        self.duration = 3.f;
-    }
-    
-    self.toastPosition = FFToastPositionDefault;
-    
-    
-}
-
-
-/**
- 显示一个Toast
- */
-- (void)show{
-    
-    [self layoutToastView];
-    
-    //显示之前先把之前的移除
-    if ([toastArray count] != 0) {
-        [self performSelectorOnMainThread:@selector(dismiss) withObject:nil waitUntilDone:YES];
-    }
-    
-    @synchronized (toastArray) {
+    if (self = [super initWithFrame:frame]) {
         
-        UIWindow *windowView = [UIApplication sharedApplication].keyWindow;
-        [windowView addSubview:self];
+        self.iconImageView = [[UIImageView alloc]init];
         
-        [UIView animateWithDuration:0.5f
-                              delay:0.f
-             usingSpringWithDamping:0.7f
-              initialSpringVelocity:0.5f
-                            options:UIViewAnimationOptionCurveEaseIn
-                         animations:^{
-                             self.frame = _toastViewFrame;
-                             self.alpha = _toastAlpha;
-                         } completion:^(BOOL finished) {
-                             
-                         }];
+        [self addSubview:self.iconImageView];
         
-        [toastArray addObject:self];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:_duration];
+        self.titleLabel = [[UILabel alloc]init];
+        
+        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.titleLabel.textAlignment = NSTextAlignmentLeft;
+        self.titleLabel.numberOfLines = 0;
+        [self addSubview:self.titleLabel];
+        
+        self.messageLabel = [[UILabel alloc]init];
+        
+        self.messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        self.messageLabel.textAlignment = NSTextAlignmentLeft;
+        self.messageLabel.numberOfLines = 0;
+        
+        [self addSubview:self.messageLabel];
+        
+        
+        
+        
     }
     
-    
-}
-
-/**
- 显示一个Toast并添加点击回调
- 
- @param handler 回调
- */
-- (void)show:(handler)handler{
-    [self show];
-    if (handler) {
-        _handler = handler;
-        UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapActionWithHandler)];
-        [self addGestureRecognizer:tapGesture];
-    }
-}
-
-
-- (void)tapActionWithHandler {
-    if (_handler) {
-        _handler();
-    }
-    [self dismiss];
-}
-
-/**
- 隐藏一个Toast
- */
--(void)dismiss{
-    
-    if (toastArray && [toastArray count] > 0) {
-        @synchronized (toastArray) {
-            
-            FFBaseToastView* toast = toastArray[0];
-            [NSRunLoop cancelPreviousPerformRequestsWithTarget:toast];
-            [toastArray removeObject:toast];
-            
-            if (self.dismissToastAnimated == YES && _toastPosition != FFToastPositionBottom && _toastPosition != FFToastPositionBottomWithFillet) {
-                
-                CGFloat tempStatusBarHeight = 0;
-                if (self.toastPosition == FFToastPositionDefault) {
-                    tempStatusBarHeight = STATUSBAR_HEIGHT;
-                }
-                
-                [UIView animateWithDuration:0.2f
-                                 animations:^{
-                                     toast.alpha = 0.f;
-                                     self.frame = CGRectMake(_toastViewFrame.origin.x, -(_toastViewFrame.size.height + tempStatusBarHeight), _toastViewFrame.size.width, _toastViewFrame.size.height);
-                                 } completion:^(BOOL finished) {
-                                     [toast removeFromSuperview];
-                                 }];
-                
-                
-            }else{
-                [UIView animateWithDuration:0.2f
-                                 animations:^{
-                                     toast.alpha = 0.f;
-                                 } completion:^(BOOL finished) {
-                                     [toast removeFromSuperview];
-                                 }];
-                
-            }
-            
-        }
-    }
-    
-    
+    return self;
 }
 
 /**
@@ -288,36 +113,61 @@ static NSMutableArray* toastArray = nil;
 -(void)layoutToastView{
     
     //设置子控件属性
-    if(_titleTextColor != nil){
-        self.titleLabel.textColor = _titleTextColor;
-    }
-    if (_titleFont != nil) {
-        self.titleLabel.font = _titleFont;
-    }
+    self.titleLabel.textColor = _titleTextColor;
+    self.titleLabel.font = _titleFont;
     
-    if (_messageTextColor != nil ) {
-        self.messageLabel.textColor = _messageTextColor;
-    }
-    
-    if (_messageFont != nil) {
-        self.messageLabel.font = _messageFont;
-    }
-    
-    if (_toastBackgroundColor != nil) {
-        self.backgroundColor = _toastBackgroundColor;
-    }
-    
-    if (_toastAlpha != 0) {
-        self.alpha = _toastAlpha;
-    }
-    
-    if(_toastCornerRadius != nil){
-    }
-    
+    self.messageLabel.textColor = _messageTextColor;
+    self.messageLabel.font = _messageFont;
+
+    self.alpha = _toastAlpha;
     self.layer.cornerRadius = _toastCornerRadius;
     self.layer.masksToBounds = YES;
     
-    self.toastViewFrame = [self toastViewFrame];
+    //根据toastType设置背景色、icon
+    //如果同时设置了toastType和toastBackgroundColor时，toastBackgroundColor将无效，视图的背景颜色为toastType相应的颜色。
+    if (self.toastType != 0) {
+        switch (self.toastType) {
+            case FFToastTypeDefault: {
+                self.toastBackgroundColor = [UIColor darkGrayColor];
+                break;
+            }
+            case FFToastTypeSuccess: {
+                self.toastBackgroundColor = [UIColor colorWithRed:31.f/255.f green:177.f/255.f blue:138.f/255.f alpha:1.f];
+                if (!_iconImage) {
+                    self.iconImage = [self imageNamed:@"fftoast_success"];
+                }
+                break;
+            }
+            case FFToastTypeError: {
+                self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:91.f/255.f blue:65.f/255.f alpha:1.f];
+                if (!_iconImage) {
+                    self.iconImage = [self imageNamed:@"fftoast_error"];
+                }
+                break;
+            }
+            case FFToastTypeWarning: {
+                self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:134.f/255.f blue:0.f/255.f alpha:1.f];
+                if (!_iconImage) {
+                    self.iconImage = [self imageNamed:@"fftoast_warning"];
+                }
+                break;
+            }
+            case FFToastTypeInfo: {
+                self.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f blue:122.f/255.f alpha:1.f];
+                if (!_iconImage) {
+                    self.iconImage = [self imageNamed:@"fftoast_info"];
+                }
+                break;
+            }
+                
+            default:
+                break;
+        }
+
+    }
+    
+    self.iconImageSize = self.iconImage == nil ? CGSizeZero : CGSizeMake(35.f, 35.f);
+    
     
 
     //上滑消失
@@ -327,6 +177,8 @@ static NSMutableArray* toastArray = nil;
         [self addGestureRecognizer:swipeGesture];
         
     }
+    
+     self.toastViewFrame = [self toastViewFrame];
     
     switch (self.toastPosition) {
         case FFToastPositionDefault: {
@@ -354,6 +206,7 @@ static NSMutableArray* toastArray = nil;
         default:
             break;
     }
+    
     
     
 }
@@ -488,35 +341,7 @@ static NSMutableArray* toastArray = nil;
 
 
 
--(instancetype)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
-        
-        self.iconImageView = [[UIImageView alloc]init];
-        self.iconImageView.image = self.iconImage;
-        [self addSubview:self.iconImageView];
-        
-        self.titleLabel = [[UILabel alloc]init];
-        self.titleLabel.text = self.titleString;
-        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.titleLabel.textAlignment = NSTextAlignmentLeft;
-        self.titleLabel.numberOfLines = 0;
-        [self addSubview:self.titleLabel];
-        
-        self.messageLabel = [[UILabel alloc]init];
-        self.messageLabel.text = self.messageString;
-        self.messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.messageLabel.textAlignment = NSTextAlignmentLeft;
-        self.messageLabel.numberOfLines = 0;
-        
-        [self addSubview:self.messageLabel];
-        
-        
-        
-        
-    }
-    
-    return self;
-}
+
 
 
 -(void)layoutSubviews{
@@ -550,7 +375,122 @@ static NSMutableArray* toastArray = nil;
     CGFloat messageLabelH = self.messageLabelSize.height;
     self.messageLabel.frame = CGRectMake(messageLabelX, messageLabelY, messageLabelW, messageLabelH);
     
+    [self loadViewData];
+    
 }
+
+/**
+ 加载各View数据
+ */
+-(void)loadViewData{
+    self.iconImageView.image = self.iconImage;
+    self.titleLabel.text = self.titleString;
+    self.messageLabel.text = self.messageString;
+    self.backgroundColor = _toastBackgroundColor;
+}
+
+/**
+ 显示一个Toast
+ */
+- (void)show{
+    
+    [self layoutToastView];
+    
+    //显示之前先把之前的移除
+    if ([toastArray count] != 0) {
+        [self performSelectorOnMainThread:@selector(dismiss) withObject:nil waitUntilDone:YES];
+    }
+    
+    @synchronized (toastArray) {
+        
+        UIWindow *windowView = [UIApplication sharedApplication].keyWindow;
+        [windowView addSubview:self];
+        
+        [UIView animateWithDuration:0.5f
+                              delay:0.f
+             usingSpringWithDamping:0.7f
+              initialSpringVelocity:0.5f
+                            options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             self.frame = _toastViewFrame;
+                             self.alpha = _toastAlpha;
+                         } completion:^(BOOL finished) {
+                             
+                         }];
+        
+        [toastArray addObject:self];
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:_duration];
+    }
+    
+    
+}
+
+/**
+ 显示一个Toast并添加点击回调
+ 
+ @param handler 回调
+ */
+- (void)show:(handler)handler{
+    [self show];
+    if (handler) {
+        _handler = handler;
+        UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapActionWithHandler)];
+        [self addGestureRecognizer:tapGesture];
+    }
+}
+
+
+- (void)tapActionWithHandler {
+    if (_handler) {
+        _handler();
+    }
+    [self dismiss];
+}
+
+/**
+ 隐藏一个Toast
+ */
+-(void)dismiss{
+    
+    if (toastArray && [toastArray count] > 0) {
+        @synchronized (toastArray) {
+            
+            FFBaseToastView* toast = toastArray[0];
+            [NSRunLoop cancelPreviousPerformRequestsWithTarget:toast];
+            [toastArray removeObject:toast];
+            
+            if (self.dismissToastAnimated == YES && _toastPosition != FFToastPositionBottom && _toastPosition != FFToastPositionBottomWithFillet) {
+                
+                CGFloat tempStatusBarHeight = 0;
+                if (self.toastPosition == FFToastPositionDefault) {
+                    tempStatusBarHeight = STATUSBAR_HEIGHT;
+                }
+                
+                [UIView animateWithDuration:0.2f
+                                 animations:^{
+                                     toast.alpha = 0.f;
+                                     self.frame = CGRectMake(_toastViewFrame.origin.x, -(_toastViewFrame.size.height + tempStatusBarHeight), _toastViewFrame.size.width, _toastViewFrame.size.height);
+                                 } completion:^(BOOL finished) {
+                                     [toast removeFromSuperview];
+                                 }];
+                
+                
+            }else{
+                [UIView animateWithDuration:0.2f
+                                 animations:^{
+                                     toast.alpha = 0.f;
+                                 } completion:^(BOOL finished) {
+                                     [toast removeFromSuperview];
+                                 }];
+                
+            }
+            
+        }
+    }
+    
+    
+}
+
 
 - (UIImage*)imageNamed:(NSString*)name {
     NSBundle * pbundle = [NSBundle bundleForClass:[self class]];
@@ -618,9 +558,6 @@ static NSMutableArray* toastArray = nil;
     return messageSize;
     
 }
-
-
-
 
 
 

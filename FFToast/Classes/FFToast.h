@@ -15,8 +15,6 @@
 typedef void(^handler)(void);
 
 
-
-
 //背景颜色
 @property (strong, nonatomic) UIColor* toastBackgroundColor;
 //Toast标题文字颜色
