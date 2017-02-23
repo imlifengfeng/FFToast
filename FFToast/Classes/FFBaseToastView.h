@@ -1,20 +1,18 @@
 //
-//  FFToast.h
+//  FFBaseToastView.h
 //  FFToastDemo
 //
-//  Created by 李峰峰 on 2017/2/14.
+//  Created by 李峰峰 on 2017/2/23.
 //  Copyright © 2017年 李峰峰. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "FFConfig.h"
 
-@interface FFToast : NSObject
+@interface FFBaseToastView : UIView
 
 //Toast点击回调
 typedef void(^handler)(void);
-
-
 
 
 //背景颜色
@@ -45,10 +43,25 @@ typedef void(^handler)(void);
 
 
 
+/**
+ 创建并显示一个Toast
+ 
+ @param title 标题
+ @param message 消息内容
+ @param iconImage 消息icon，toastType不为FFToastTypeDefault时iconImage为空仍然会有相应icon
+ @param duration 显示时长
+ */
 + (void)showToastWithTitle:(NSString *)title message:(NSString *)message iconImage:(UIImage*)iconImage duration:(NSTimeInterval)duration toastType:(FFToastType)toastType;
 
 
-
+/**
+ 创建一个Toast
+ 
+ @param title 标题
+ @param message 消息内容
+ @param iconImage 消息icon
+ @return Toast
+ */
 - (instancetype)initToastWithTitle:(NSString *)title message:(NSString *)message iconImage:(UIImage*)iconImage;
 
 
@@ -59,7 +72,7 @@ typedef void(^handler)(void);
 
 /**
  显示一个Toast
-
+ 
  @param handler Toast点击回调
  */
 - (void)show:(handler)handler;
