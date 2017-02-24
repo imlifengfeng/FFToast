@@ -23,6 +23,10 @@
 		6C01B3DA1E5F25E500E0D020 /* FFBaseToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C01B3D81E5F25E500E0D020 /* FFBaseToastView.m */; };
 		6C01B3DF1E5FC8B900E0D020 /* NSString+FFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C01B3DE1E5FC8B900E0D020 /* NSString+FFToast.m */; };
 		6C01B3E21E5FCA0600E0D020 /* UIImage+FFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C01B3E11E5FCA0600E0D020 /* UIImage+FFToast.m */; };
+		6C01B3EB1E5FE0CB00E0D020 /* FFCentreToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C01B3EA1E5FE0CB00E0D020 /* FFCentreToastView.m */; };
+		6C01B3EF1E5FE30200E0D020 /* fftoast_dismiss.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C01B3EC1E5FE30200E0D020 /* fftoast_dismiss.png */; };
+		6C01B3F01E5FE30200E0D020 /* fftoast_dismiss@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C01B3ED1E5FE30200E0D020 /* fftoast_dismiss@2x.png */; };
+		6C01B3F11E5FE30200E0D020 /* fftoast_dismiss@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C01B3EE1E5FE30200E0D020 /* fftoast_dismiss@3x.png */; };
 		6C82358F1E529BEE004E389E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C82358E1E529BEE004E389E /* main.m */; };
 		6C8235921E529BEE004E389E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235911E529BEE004E389E /* AppDelegate.m */; };
 		6C8235951E529BEE004E389E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235941E529BEE004E389E /* ViewController.m */; };
@@ -72,6 +76,11 @@
 		6C01B3DE1E5FC8B900E0D020 /* NSString+FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FFToast.m"; sourceTree = "<group>"; };
 		6C01B3E01E5FCA0600E0D020 /* UIImage+FFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FFToast.h"; sourceTree = "<group>"; };
 		6C01B3E11E5FCA0600E0D020 /* UIImage+FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FFToast.m"; sourceTree = "<group>"; };
+		6C01B3E91E5FE0CB00E0D020 /* FFCentreToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFCentreToastView.h; path = FFToast/Assets/FFCentreToastView.h; sourceTree = SOURCE_ROOT; };
+		6C01B3EA1E5FE0CB00E0D020 /* FFCentreToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFCentreToastView.m; path = FFToast/Assets/FFCentreToastView.m; sourceTree = SOURCE_ROOT; };
+		6C01B3EC1E5FE30200E0D020 /* fftoast_dismiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fftoast_dismiss.png; path = FFToast/Assets/fftoast_dismiss.png; sourceTree = SOURCE_ROOT; };
+		6C01B3ED1E5FE30200E0D020 /* fftoast_dismiss@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_dismiss@2x.png"; path = "FFToast/Assets/fftoast_dismiss@2x.png"; sourceTree = SOURCE_ROOT; };
+		6C01B3EE1E5FE30200E0D020 /* fftoast_dismiss@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_dismiss@3x.png"; path = "FFToast/Assets/fftoast_dismiss@3x.png"; sourceTree = SOURCE_ROOT; };
 		6C82358A1E529BEE004E389E /* FFToastDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFToastDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C82358E1E529BEE004E389E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C8235901E529BEE004E389E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,6 +143,8 @@
 				344A29371E5C84CA009383F7 /* FFToast.m */,
 				6C01B3D71E5F25E500E0D020 /* FFBaseToastView.h */,
 				6C01B3D81E5F25E500E0D020 /* FFBaseToastView.m */,
+				6C01B3E91E5FE0CB00E0D020 /* FFCentreToastView.h */,
+				6C01B3EA1E5FE0CB00E0D020 /* FFCentreToastView.m */,
 				6C01B3D91E5F25E500E0D020 /* FFConfig.h */,
 			);
 			path = Classes;
@@ -216,6 +227,9 @@
 		6CBFDD641E54A01700B15524 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				6C01B3EC1E5FE30200E0D020 /* fftoast_dismiss.png */,
+				6C01B3ED1E5FE30200E0D020 /* fftoast_dismiss@2x.png */,
+				6C01B3EE1E5FE30200E0D020 /* fftoast_dismiss@3x.png */,
 				344A29391E5C84DE009383F7 /* fftoast_error.png */,
 				344A293A1E5C84DE009383F7 /* fftoast_error@2x.png */,
 				344A293B1E5C84DE009383F7 /* fftoast_error@3x.png */,
@@ -230,7 +244,7 @@
 				344A29441E5C84DE009383F7 /* fftoast_warning@3x.png */,
 			);
 			name = Assets;
-			path = ../../../MyGithub/FFToast/FFToast/Assets;
+			path = FFToast/Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +364,9 @@
 				344A29471E5C84DE009383F7 /* fftoast_error@3x.png in Resources */,
 				6C82359D1E529BEE004E389E /* LaunchScreen.storyboard in Resources */,
 				344A294B1E5C84DE009383F7 /* fftoast_success.png in Resources */,
+				6C01B3F11E5FE30200E0D020 /* fftoast_dismiss@3x.png in Resources */,
+				6C01B3F01E5FE30200E0D020 /* fftoast_dismiss@2x.png in Resources */,
+				6C01B3EF1E5FE30200E0D020 /* fftoast_dismiss.png in Resources */,
 				6C82359A1E529BEE004E389E /* Assets.xcassets in Resources */,
 				344A29501E5C84DE009383F7 /* fftoast_warning@3x.png in Resources */,
 				344A294A1E5C84DE009383F7 /* fftoast_info@3x.png in Resources */,
@@ -382,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C8235951E529BEE004E389E /* ViewController.m in Sources */,
+				6C01B3EB1E5FE0CB00E0D020 /* FFCentreToastView.m in Sources */,
 				6C01B3DF1E5FC8B900E0D020 /* NSString+FFToast.m in Sources */,
 				6C8235921E529BEE004E389E /* AppDelegate.m in Sources */,
 				6C82358F1E529BEE004E389E /* main.m in Sources */,
