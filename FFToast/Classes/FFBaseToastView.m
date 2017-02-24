@@ -134,28 +134,28 @@ static NSMutableArray* toastArray = nil;
             case FFToastTypeSuccess: {
                 self.toastBackgroundColor = [UIColor colorWithRed:31.f/255.f green:177.f/255.f blue:138.f/255.f alpha:1.f];
                 if (!_iconImage) {
-                    self.iconImage = [self imageNamed:@"fftoast_success"];
+                    self.iconImage = [UIImage imageWithName:@"fftoast_success"];
                 }
                 break;
             }
             case FFToastTypeError: {
                 self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:91.f/255.f blue:65.f/255.f alpha:1.f];
                 if (!_iconImage) {
-                    self.iconImage = [self imageNamed:@"fftoast_error"];
+                    self.iconImage = [UIImage imageWithName:@"fftoast_error"];
                 }
                 break;
             }
             case FFToastTypeWarning: {
                 self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:134.f/255.f blue:0.f/255.f alpha:1.f];
                 if (!_iconImage) {
-                    self.iconImage = [self imageNamed:@"fftoast_warning"];
+                    self.iconImage = [UIImage imageWithName:@"fftoast_warning"];
                 }
                 break;
             }
             case FFToastTypeInfo: {
                 self.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f blue:122.f/255.f alpha:1.f];
                 if (!_iconImage) {
-                    self.iconImage = [self imageNamed:@"fftoast_info"];
+                    self.iconImage = [UIImage imageWithName:@"fftoast_info"];
                 }
                 break;
             }
@@ -234,8 +234,8 @@ static NSMutableArray* toastArray = nil;
         textMaxWidth -= 2*BOTTOM_HORIZONTAL_MAX_SPACE;
     }
     
-    self.titleLabelSize = [self sizeForTitleString:_titleString maxWidth:textMaxWidth];
-    self.messageLabelSize = [self sizeForMessageString:_messageString maxWidth:textMaxWidth];
+    self.titleLabelSize = [NSString sizeForString:_titleString font:_titleFont maxWidth:textMaxWidth];
+    self.messageLabelSize = [NSString sizeForString:_messageString font:_messageFont maxWidth:textMaxWidth];
     
     
     CGFloat toastViewX = 0;
@@ -492,72 +492,6 @@ static NSMutableArray* toastArray = nil;
 }
 
 
-- (UIImage*)imageNamed:(NSString*)name {
-    NSBundle * pbundle = [NSBundle bundleForClass:[self class]];
-    NSString *bundleURL = [pbundle pathForResource:@"FFToast" ofType:@"bundle"];
-    NSBundle *imagesBundle = [NSBundle bundleWithPath:bundleURL];
-    UIImage * image = [UIImage imageNamed:name inBundle:imagesBundle compatibleWithTraitCollection:nil];
-    return image;
-}
-
-
-/**
- 根据标题内容获取标题size
- 
- @param title 标题文字
- @param maxWidth 标题最大宽度
- @return 标题size
- */
-- (CGSize)sizeForTitleString:(NSString*)title maxWidth:(CGFloat) maxWidth{
-    
-    if (!title || title.length == 0) {
-        return CGSizeMake(0, 0);
-    }
-    
-    NSMutableParagraphStyle* paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    paragraphStyle.alignment = NSTextAlignmentLeft;
-    
-    
-    CGSize titleSize = [title boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX)
-                                           options:NSStringDrawingUsesLineFragmentOrigin
-                                        attributes:@{NSParagraphStyleAttributeName : paragraphStyle,
-                                                     NSFontAttributeName : _titleFont}
-                                           context:nil].size;
-    
-    return titleSize;
-    
-    
-}
-
-
-/**
- 根据消息内容获取消息size
- 
- @param message 消息文字
- @param maxWidth 消息最大宽度
- @return 消息size
- */
-- (CGSize)sizeForMessageString:(NSString*)message maxWidth:(CGFloat) maxWidth{
-    
-    if (!message || message.length == 0) {
-        return CGSizeMake(0, 0);
-    }
-    
-    NSMutableParagraphStyle* paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    paragraphStyle.alignment = NSTextAlignmentLeft;
-    
-    
-    CGSize messageSize = [message boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX)
-                                               options:NSStringDrawingUsesLineFragmentOrigin
-                                            attributes:@{NSParagraphStyleAttributeName : paragraphStyle,
-                                                         NSFontAttributeName : _messageFont}
-                                               context:nil].size;
-    
-    return messageSize;
-    
-}
 
 
 

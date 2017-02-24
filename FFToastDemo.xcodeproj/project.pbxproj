@@ -21,6 +21,8 @@
 		344A294F1E5C84DE009383F7 /* fftoast_warning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29431E5C84DE009383F7 /* fftoast_warning@2x.png */; };
 		344A29501E5C84DE009383F7 /* fftoast_warning@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 344A29441E5C84DE009383F7 /* fftoast_warning@3x.png */; };
 		6C01B3DA1E5F25E500E0D020 /* FFBaseToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C01B3D81E5F25E500E0D020 /* FFBaseToastView.m */; };
+		6C01B3DF1E5FC8B900E0D020 /* NSString+FFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C01B3DE1E5FC8B900E0D020 /* NSString+FFToast.m */; };
+		6C01B3E21E5FCA0600E0D020 /* UIImage+FFToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C01B3E11E5FCA0600E0D020 /* UIImage+FFToast.m */; };
 		6C82358F1E529BEE004E389E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C82358E1E529BEE004E389E /* main.m */; };
 		6C8235921E529BEE004E389E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235911E529BEE004E389E /* AppDelegate.m */; };
 		6C8235951E529BEE004E389E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8235941E529BEE004E389E /* ViewController.m */; };
@@ -66,6 +68,10 @@
 		6C01B3D71E5F25E500E0D020 /* FFBaseToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFBaseToastView.h; path = FFToast/Classes/FFBaseToastView.h; sourceTree = SOURCE_ROOT; };
 		6C01B3D81E5F25E500E0D020 /* FFBaseToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFBaseToastView.m; path = FFToast/Classes/FFBaseToastView.m; sourceTree = SOURCE_ROOT; };
 		6C01B3D91E5F25E500E0D020 /* FFConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFConfig.h; path = FFToast/Classes/FFConfig.h; sourceTree = SOURCE_ROOT; };
+		6C01B3DD1E5FC8B900E0D020 /* NSString+FFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FFToast.h"; sourceTree = "<group>"; };
+		6C01B3DE1E5FC8B900E0D020 /* NSString+FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FFToast.m"; sourceTree = "<group>"; };
+		6C01B3E01E5FCA0600E0D020 /* UIImage+FFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FFToast.h"; sourceTree = "<group>"; };
+		6C01B3E11E5FCA0600E0D020 /* UIImage+FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FFToast.m"; sourceTree = "<group>"; };
 		6C82358A1E529BEE004E389E /* FFToastDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFToastDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C82358E1E529BEE004E389E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C8235901E529BEE004E389E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +115,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C01B3DC1E5FC7BC00E0D020 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6C01B3DD1E5FC8B900E0D020 /* NSString+FFToast.h */,
+				6C01B3DE1E5FC8B900E0D020 /* NSString+FFToast.m */,
+				6C01B3E01E5FCA0600E0D020 /* UIImage+FFToast.h */,
+				6C01B3E11E5FCA0600E0D020 /* UIImage+FFToast.m */,
+			);
+			name = Category;
+			path = FFToast/Category;
+			sourceTree = SOURCE_ROOT;
+		};
 		6C3C148A1E57713E00DF2769 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +205,7 @@
 		6C8235E31E52FB61004E389E /* FFToast */ = {
 			isa = PBXGroup;
 			children = (
+				6C01B3DC1E5FC7BC00E0D020 /* Category */,
 				6C3C148A1E57713E00DF2769 /* Classes */,
 				6CBFDD641E54A01700B15524 /* Assets */,
 			);
@@ -363,9 +382,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C8235951E529BEE004E389E /* ViewController.m in Sources */,
+				6C01B3DF1E5FC8B900E0D020 /* NSString+FFToast.m in Sources */,
 				6C8235921E529BEE004E389E /* AppDelegate.m in Sources */,
 				6C82358F1E529BEE004E389E /* main.m in Sources */,
 				344A29381E5C84CA009383F7 /* FFToast.m in Sources */,
+				6C01B3E21E5FCA0600E0D020 /* UIImage+FFToast.m in Sources */,
 				6C01B3DA1E5F25E500E0D020 /* FFBaseToastView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

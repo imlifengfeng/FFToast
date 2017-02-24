@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "FFConfig.h"
+#import "NSString+FFToast.h"
+#import "UIImage+FFToast.h"
 
 @interface FFBaseToastView : UIView
 
