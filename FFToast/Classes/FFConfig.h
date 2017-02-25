@@ -9,6 +9,10 @@
 #ifndef FFConfig_h
 #define FFConfig_h
 
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define STATUSBAR_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
+
 typedef NS_ENUM(NSInteger, FFToastType) {
     
     //灰色背景、无图标

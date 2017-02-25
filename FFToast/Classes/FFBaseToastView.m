@@ -8,10 +8,6 @@
 
 #import "FFBaseToastView.h"
 
-#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-#define STATUSBAR_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
-
 #define VERTICAL_SPACE 8.f
 #define HORIZONTAL_SPACE 8.f
 #define BOTTOM_SPACE 80.f
@@ -57,6 +53,7 @@ static NSMutableArray* toastArray = nil;
     self.titleString = title;
     self.messageString = message;
     
+    // TODO:下面判断代码和设置iconImageSize代码无效（可有可无），需要修改
     if (iconImage == nil) {
         if (self.toastType == FFToastPositionDefault) {
             self.iconImage = nil;
@@ -64,8 +61,6 @@ static NSMutableArray* toastArray = nil;
     }else{
         self.iconImage = iconImage;
     }
-    
-    
     self.iconImageSize = self.iconImage == nil ? CGSizeZero : CGSizeMake(35.f, 35.f);
     
     
@@ -81,26 +76,13 @@ static NSMutableArray* toastArray = nil;
     if (self = [super initWithFrame:frame]) {
         
         self.iconImageView = [[UIImageView alloc]init];
-        
         [self addSubview:self.iconImageView];
         
         self.titleLabel = [[UILabel alloc]init];
-        
-        self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.titleLabel.textAlignment = NSTextAlignmentLeft;
-        self.titleLabel.numberOfLines = 0;
         [self addSubview:self.titleLabel];
         
         self.messageLabel = [[UILabel alloc]init];
-        
-        self.messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        self.messageLabel.textAlignment = NSTextAlignmentLeft;
-        self.messageLabel.numberOfLines = 0;
-        
         [self addSubview:self.messageLabel];
-        
-        
-        
         
     }
     
@@ -114,9 +96,15 @@ static NSMutableArray* toastArray = nil;
     
     //设置子控件属性
     self.titleLabel.textColor = _titleTextColor;
+    self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.titleLabel.textAlignment = NSTextAlignmentLeft;
+    self.titleLabel.numberOfLines = 0;
     self.titleLabel.font = _titleFont;
     
     self.messageLabel.textColor = _messageTextColor;
+    self.messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.messageLabel.textAlignment = NSTextAlignmentLeft;
+    self.messageLabel.numberOfLines = 0;
     self.messageLabel.font = _messageFont;
 
     self.alpha = _toastAlpha;

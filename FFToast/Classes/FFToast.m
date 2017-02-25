@@ -15,8 +15,6 @@
 @property (nonatomic, copy) NSString* messageString;
 @property (strong, nonatomic) UIImage* iconImage;
 
-@property (assign, nonatomic) FFToastType toastType;
-
 @property handler handler;
 
 @end

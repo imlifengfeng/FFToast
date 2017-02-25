@@ -95,14 +95,14 @@
                 
                 if ([_positionSwitch isOn]) {
                     
-                    FFToast *toast = [[FFToast alloc]initToastWithTitle:_titleTextField.text message:_messageTextField.text iconImage:[UIImage imageNamed:@"fftoast_success"]];
+                    FFToast *toast = [[FFToast alloc]initToastWithTitle:_titleTextField.text message:_messageTextField.text iconImage:nil];
                     if ([_filletSwitch isOn]) {
                         toast.toastPosition = FFToastPositionBelowStatusBarWithFillet;
                     }else{
                         toast.toastPosition = FFToastPositionBelowStatusBar;
                     }
                     
-                    toast.toastBackgroundColor = [UIColor colorWithRed:31.f/255.f green:177.f/255.f blue:138.f/255.f alpha:1.f];
+                    toast.toastType = FFToastTypeSuccess;
                     [toast show];
                     
                 }else{

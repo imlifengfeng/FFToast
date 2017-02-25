@@ -39,15 +39,46 @@ typedef void(^handler)(void);
 
 //Toast显示位置
 @property (assign, nonatomic) FFToastPosition toastPosition;
+//Toast显示类型
+@property (assign, nonatomic) FFToastType toastType;
 
 
 
+/**
+ 显示一个Toast
 
+ @param title 标题
+ @param message 消息内容
+ @param iconImage 消息icon
+ @param duration 显示时长
+ @param toastType Toast类型
+ */
 + (void)showToastWithTitle:(NSString *)title message:(NSString *)message iconImage:(UIImage*)iconImage duration:(NSTimeInterval)duration toastType:(FFToastType)toastType;
 
 
 
+/**
+ 创建一个Toast
+
+ @param title 标题
+ @param message 消息内容
+ @param iconImage 消息icon
+ @return Toast
+ */
 - (instancetype)initToastWithTitle:(NSString *)title message:(NSString *)message iconImage:(UIImage*)iconImage;
+
+
+
+/**
+ 在中间显示一个自定义Toast
+
+ @param customToastView 自定义的ToastView
+ @param autoDismiss 是否自动隐藏
+ @param duration 显示时长（autoDismiss = NO时该参数将无效）
+ @param enableDismissBtn 是否显示隐藏按钮
+ @param dismissBtnImage 隐藏按钮图片（enableDismissBtn = NO时该参数将无效）
+ */
++ (void)showCentreToastWithView:(UIView *)customToastView autoDismiss:(BOOL)autoDismiss duration:(NSTimeInterval)duration enableDismissBtn:(BOOL)enableDismissBtn dismissBtnImage:(UIImage*)dismissBtnImage;
 
 
 /**
