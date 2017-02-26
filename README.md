@@ -6,7 +6,7 @@
 A very powerful iOS message notifications and AlertView extensions. It can be easily realized from the top of the screen, the bottom of the screen and the middle of the screen pops up a notification. You can easily customize the pop-up View.
 
 ![gif](https://github.com/imlifengfeng/FFToast/blob/master/screenshots/demo.gif)
-![screenshots](https://github.com/imlifengfeng/FFToast/blob/master/screenshots/screenshots_1.png)
+![screenshots](https://github.com/imlifengfeng/FFToast/blob/master/screenshots/screenshots.png)
 
 # English instructions
 
