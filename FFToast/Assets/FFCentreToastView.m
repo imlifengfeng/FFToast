@@ -149,7 +149,7 @@ static NSMutableArray* toastArray = nil;
         //根据toastType设置icon
         switch (self.toastType) {
             case FFToastTypeDefault: {
-                self.toastBackgroundColor = [UIColor darkGrayColor];
+                self.toastBackgroundColor = [UIColor whiteColor];
                 break;
             }
             case FFToastTypeSuccess: {

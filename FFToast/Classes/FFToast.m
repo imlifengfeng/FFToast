@@ -19,6 +19,8 @@
 @property (assign, nonatomic) BOOL isCustomToastView;
 @property(nonatomic,strong)UIView *customToastView;
 
+@property(nonatomic,strong)FFCentreToastView *ffCentreToastView;
+
 @property handler handler;
 
 @end
@@ -96,26 +98,29 @@
  根据具体属性创建响应的Toast并显示出来
  */
 - (void)show{
+    
+    [self configBgAndTxetColor];
+    
     if (_isCustomToastView == NO) {
         if (_toastPosition == FFToastPositionCentre || _toastPosition == FFToastPositionCentreWithFillet) {
             
             //FFCentreToastView
-            FFCentreToastView *ffCentreToastView = [[FFCentreToastView alloc]initToastWithTitle:_titleString message:_messageString iconImage:_iconImage];
+            _ffCentreToastView = [[FFCentreToastView alloc]initToastWithTitle:_titleString message:_messageString iconImage:_iconImage];
             
-            ffCentreToastView.toastBackgroundColor = _toastBackgroundColor;
-            ffCentreToastView.titleTextColor = _titleTextColor;
-            ffCentreToastView.messageTextColor = _messageTextColor;
-            ffCentreToastView.titleFont = _titleFont;
-            ffCentreToastView.messageFont = _messageFont;
-            ffCentreToastView.toastCornerRadius = _toastCornerRadius;
-            ffCentreToastView.toastAlpha = _toastAlpha;
-            ffCentreToastView.duration = _duration;
-            ffCentreToastView.dismissToastAnimated = _dismissToastAnimated;
-            ffCentreToastView.toastPosition = _toastPosition;
-            ffCentreToastView.toastType = _toastType;
-            ffCentreToastView.enableDismissBtn = _enableDismissBtn;
-            ffCentreToastView.autoDismiss = _autoDismiss;
-            [ffCentreToastView show];
+            _ffCentreToastView.toastBackgroundColor = _toastBackgroundColor;
+            _ffCentreToastView.titleTextColor = _titleTextColor;
+            _ffCentreToastView.messageTextColor = _messageTextColor;
+            _ffCentreToastView.titleFont = _titleFont;
+            _ffCentreToastView.messageFont = _messageFont;
+            _ffCentreToastView.toastCornerRadius = _toastCornerRadius;
+            _ffCentreToastView.toastAlpha = _toastAlpha;
+            _ffCentreToastView.duration = _duration;
+            _ffCentreToastView.dismissToastAnimated = _dismissToastAnimated;
+            _ffCentreToastView.toastPosition = _toastPosition;
+            _ffCentreToastView.toastType = _toastType;
+            _ffCentreToastView.enableDismissBtn = _enableDismissBtn;
+            _ffCentreToastView.autoDismiss = _autoDismiss;
+            [_ffCentreToastView show];
             
             
         }else{
@@ -142,38 +147,41 @@
     }else{
         //在屏幕中显示间自定义的View
         //FFCentreToastView
-        FFCentreToastView *ffCentreToastView = [[FFCentreToastView alloc]initCentreToastWithView:_customToastView];
+        _ffCentreToastView = [[FFCentreToastView alloc]initCentreToastWithView:_customToastView];
         
-        ffCentreToastView.toastCornerRadius = _toastCornerRadius;
-        ffCentreToastView.toastAlpha = _toastAlpha;
-        ffCentreToastView.duration = _duration;
-        ffCentreToastView.dismissToastAnimated = _dismissToastAnimated;
-        ffCentreToastView.enableDismissBtn = _enableDismissBtn;
-        ffCentreToastView.autoDismiss = _autoDismiss;
-        [ffCentreToastView show];
+        _ffCentreToastView.toastCornerRadius = _toastCornerRadius;
+        _ffCentreToastView.toastAlpha = _toastAlpha;
+        _ffCentreToastView.duration = _duration;
+        _ffCentreToastView.dismissToastAnimated = _dismissToastAnimated;
+        _ffCentreToastView.enableDismissBtn = _enableDismissBtn;
+        _ffCentreToastView.autoDismiss = _autoDismiss;
+        [_ffCentreToastView show];
     }
 }
 
 - (void)show:(handler)handler{
+    
+    [self configBgAndTxetColor];
+    
     if (_isCustomToastView == NO) {
         if (_toastPosition == FFToastPositionCentre || _toastPosition == FFToastPositionCentreWithFillet) {
             //FFCentreToastView
-            FFCentreToastView *ffCentreToastView = [[FFCentreToastView alloc]initToastWithTitle:_titleString message:_messageString iconImage:_iconImage];
+            _ffCentreToastView = [[FFCentreToastView alloc]initToastWithTitle:_titleString message:_messageString iconImage:_iconImage];
             
-            ffCentreToastView.toastBackgroundColor = _toastBackgroundColor;
-            ffCentreToastView.titleTextColor = _titleTextColor;
-            ffCentreToastView.messageTextColor = _messageTextColor;
-            ffCentreToastView.titleFont = _titleFont;
-            ffCentreToastView.messageFont = _messageFont;
-            ffCentreToastView.toastCornerRadius = _toastCornerRadius;
-            ffCentreToastView.toastAlpha = _toastAlpha;
-            ffCentreToastView.duration = _duration;
-            ffCentreToastView.dismissToastAnimated = _dismissToastAnimated;
-            ffCentreToastView.toastPosition = _toastPosition;
-            ffCentreToastView.toastType = _toastType;
-            ffCentreToastView.enableDismissBtn = _enableDismissBtn;
-            ffCentreToastView.autoDismiss = _autoDismiss;
-            [ffCentreToastView show];
+            _ffCentreToastView.toastBackgroundColor = _toastBackgroundColor;
+            _ffCentreToastView.titleTextColor = _titleTextColor;
+            _ffCentreToastView.messageTextColor = _messageTextColor;
+            _ffCentreToastView.titleFont = _titleFont;
+            _ffCentreToastView.messageFont = _messageFont;
+            _ffCentreToastView.toastCornerRadius = _toastCornerRadius;
+            _ffCentreToastView.toastAlpha = _toastAlpha;
+            _ffCentreToastView.duration = _duration;
+            _ffCentreToastView.dismissToastAnimated = _dismissToastAnimated;
+            _ffCentreToastView.toastPosition = _toastPosition;
+            _ffCentreToastView.toastType = _toastType;
+            _ffCentreToastView.enableDismissBtn = _enableDismissBtn;
+            _ffCentreToastView.autoDismiss = _autoDismiss;
+            [_ffCentreToastView show];
             
         }else{
             //FFBaseToastView
@@ -202,19 +210,59 @@
     }else{
         //在屏幕中显示间自定义的View
         //FFCentreToastView
-        FFCentreToastView *ffCentreToastView = [[FFCentreToastView alloc]initCentreToastWithView:_customToastView];
+        _ffCentreToastView = [[FFCentreToastView alloc]initCentreToastWithView:_customToastView];
         
-        ffCentreToastView.toastCornerRadius = _toastCornerRadius;
-        ffCentreToastView.toastAlpha = _toastAlpha;
-        ffCentreToastView.duration = _duration;
-        ffCentreToastView.dismissToastAnimated = _dismissToastAnimated;
-        ffCentreToastView.enableDismissBtn = _enableDismissBtn;
-        ffCentreToastView.autoDismiss = _autoDismiss;
-        [ffCentreToastView show];
+        _ffCentreToastView.toastCornerRadius = _toastCornerRadius;
+        _ffCentreToastView.toastAlpha = _toastAlpha;
+        _ffCentreToastView.duration = _duration;
+        _ffCentreToastView.dismissToastAnimated = _dismissToastAnimated;
+        _ffCentreToastView.enableDismissBtn = _enableDismissBtn;
+        _ffCentreToastView.autoDismiss = _autoDismiss;
+        [_ffCentreToastView show];
     }
     
 }
 
+-(void)dismissCentreToast{
+    if (_ffCentreToastView != nil) {
+        [_ffCentreToastView dismiss];
+    }
+   }
+
+
+-(void)configBgAndTxetColor{
+    
+    
+    //默认背景色
+    if (_toastBackgroundColor == nil) {
+        if(_toastPosition == FFToastPositionCentre || _toastPosition == FFToastPositionCentreWithFillet){
+            self.toastBackgroundColor = [UIColor whiteColor];
+
+        }else{
+            self.toastBackgroundColor = [UIColor darkGrayColor];
+
+        }
+    }
+    //默认文字颜色
+    if (_titleTextColor == nil) {
+        if(_toastPosition == FFToastPositionCentre || _toastPosition == FFToastPositionCentreWithFillet){
+            //TextColor
+            self.titleTextColor = [UIColor blackColor];
+        }else{
+            self.titleTextColor = [UIColor whiteColor];
+        }
+    }
+    if (_messageTextColor == nil) {
+        if(_toastPosition == FFToastPositionCentre || _toastPosition == FFToastPositionCentreWithFillet){
+            //TextColor
+            self.messageTextColor = [UIColor blackColor];
+        }else{
+            self.messageTextColor = [UIColor whiteColor];
+        }
+    }
+    
+
+}
 
 /**
  重写init方法，加入默认属性
@@ -228,18 +276,11 @@
 }
 
 
-
 /**
  初始化Toast基本配置（可以在这里修改一些默认效果）
  */
 -(void)initToastConfig{
     
-    //默认背景色
-    self.toastBackgroundColor = [UIColor darkGrayColor];
-    
-    //TextColor
-    self.titleTextColor = [UIColor whiteColor];
-    self.messageTextColor = [UIColor whiteColor];
     
     //TextFont
     self.titleFont = [UIFont systemFontOfSize:15.f weight:UIFontWeightMedium];

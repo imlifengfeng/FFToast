@@ -100,5 +100,10 @@ typedef void(^handler)(void);
  */
 - (void)show:(handler)handler;
 
+/**
+ 隐藏一个Toast
+ */
+- (void)dismissCentreToast;
+
 
 @end

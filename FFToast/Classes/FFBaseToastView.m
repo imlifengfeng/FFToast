@@ -53,7 +53,6 @@ static NSMutableArray* toastArray = nil;
     self.titleString = title;
     self.messageString = message;
     
-    // TODO:下面判断代码和设置iconImageSize代码无效（可有可无），需要修改
     if (iconImage == nil) {
         if (self.toastType == FFToastPositionDefault) {
             self.iconImage = nil;
@@ -407,7 +406,7 @@ static NSMutableArray* toastArray = nil;
                          }];
         
         [toastArray addObject:self];
-
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:_duration];
         
     }
     
