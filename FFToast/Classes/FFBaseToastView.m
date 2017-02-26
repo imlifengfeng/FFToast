@@ -112,47 +112,44 @@ static NSMutableArray* toastArray = nil;
     self.layer.masksToBounds = YES;
     
     //根据toastType设置背景色、icon
-    //如果同时设置了toastType和toastBackgroundColor时，toastBackgroundColor将无效，视图的背景颜色为toastType相应的颜色。
-    if (self.toastType != 0) {
-        switch (self.toastType) {
-            case FFToastTypeDefault: {
-                self.toastBackgroundColor = [UIColor darkGrayColor];
-                break;
-            }
-            case FFToastTypeSuccess: {
-                self.toastBackgroundColor = [UIColor colorWithRed:31.f/255.f green:177.f/255.f blue:138.f/255.f alpha:1.f];
-                if (!_iconImage) {
-                    self.iconImage = [UIImage imageWithName:@"fftoast_success"];
-                }
-                break;
-            }
-            case FFToastTypeError: {
-                self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:91.f/255.f blue:65.f/255.f alpha:1.f];
-                if (!_iconImage) {
-                    self.iconImage = [UIImage imageWithName:@"fftoast_error"];
-                }
-                break;
-            }
-            case FFToastTypeWarning: {
-                self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:134.f/255.f blue:0.f/255.f alpha:1.f];
-                if (!_iconImage) {
-                    self.iconImage = [UIImage imageWithName:@"fftoast_warning"];
-                }
-                break;
-            }
-            case FFToastTypeInfo: {
-                self.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f blue:122.f/255.f alpha:1.f];
-                if (!_iconImage) {
-                    self.iconImage = [UIImage imageWithName:@"fftoast_info"];
-                }
-                break;
-            }
-                
-            default:
-                break;
+    switch (self.toastType) {
+        case FFToastTypeDefault: {
+            self.toastBackgroundColor = [UIColor darkGrayColor];
+            break;
         }
-
+        case FFToastTypeSuccess: {
+            self.toastBackgroundColor = [UIColor colorWithRed:31.f/255.f green:177.f/255.f blue:138.f/255.f alpha:1.f];
+            if (!_iconImage) {
+                self.iconImage = [UIImage imageWithName:@"fftoast_success"];
+            }
+            break;
+        }
+        case FFToastTypeError: {
+            self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:91.f/255.f blue:65.f/255.f alpha:1.f];
+            if (!_iconImage) {
+                self.iconImage = [UIImage imageWithName:@"fftoast_error"];
+            }
+            break;
+        }
+        case FFToastTypeWarning: {
+            self.toastBackgroundColor = [UIColor colorWithRed:255.f/255.f green:134.f/255.f blue:0.f/255.f alpha:1.f];
+            if (!_iconImage) {
+                self.iconImage = [UIImage imageWithName:@"fftoast_warning"];
+            }
+            break;
+        }
+        case FFToastTypeInfo: {
+            self.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f blue:122.f/255.f alpha:1.f];
+            if (!_iconImage) {
+                self.iconImage = [UIImage imageWithName:@"fftoast_info"];
+            }
+            break;
+        }
+            
+        default:
+            break;
     }
+
     
     self.iconImageSize = self.iconImage == nil ? CGSizeZero : CGSizeMake(35.f, 35.f);
     
@@ -374,7 +371,10 @@ static NSMutableArray* toastArray = nil;
     self.iconImageView.image = self.iconImage;
     self.titleLabel.text = self.titleString;
     self.messageLabel.text = self.messageString;
-    self.backgroundColor = _toastBackgroundColor;
+    if (_toastBackgroundColor != nil) {
+        self.backgroundColor = _toastBackgroundColor;
+    }
+    
 }
 
 /**
@@ -407,7 +407,8 @@ static NSMutableArray* toastArray = nil;
                          }];
         
         [toastArray addObject:self];
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:_duration];
+
+        
     }
     
     

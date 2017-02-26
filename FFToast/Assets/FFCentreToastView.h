@@ -77,13 +77,6 @@ typedef void(^handler)(void);
  */
 - (void)show;
 
-/**
- 显示一个Toast
- 
- @param handler Toast点击回调
- */
-- (void)show:(handler)handler;
-
 
 /**
  隐藏一个Toast

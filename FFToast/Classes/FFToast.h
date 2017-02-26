@@ -42,6 +42,12 @@ typedef void(^handler)(void);
 //Toast显示类型
 @property (assign, nonatomic) FFToastType toastType;
 
+//是否自动隐藏
+@property(assign,nonatomic)BOOL autoDismiss;
+//是否在右上角显示隐藏按钮
+@property(assign,nonatomic)BOOL enableDismissBtn;
+//隐藏按钮的图标
+@property (strong, nonatomic) UIImage* dismissBtnImage;
 
 
 /**
@@ -77,8 +83,9 @@ typedef void(^handler)(void);
  @param duration 显示时长（autoDismiss = NO时该参数将无效）
  @param enableDismissBtn 是否显示隐藏按钮
  @param dismissBtnImage 隐藏按钮图片（enableDismissBtn = NO时该参数将无效）
+ @return Toast
  */
-+ (void)showCentreToastWithView:(UIView *)customToastView autoDismiss:(BOOL)autoDismiss duration:(NSTimeInterval)duration enableDismissBtn:(BOOL)enableDismissBtn dismissBtnImage:(UIImage*)dismissBtnImage;
+- (instancetype)initCentreToastWithView:(UIView *)customToastView autoDismiss:(BOOL)autoDismiss duration:(NSTimeInterval)duration enableDismissBtn:(BOOL)enableDismissBtn dismissBtnImage:(UIImage*)dismissBtnImage;
 
 
 /**
