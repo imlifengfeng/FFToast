@@ -7,6 +7,8 @@
 //
 
 #import "FFCentreToastView.h"
+#import "NSString+FFToast.h"
+#import "UIImage+FFToast.h"
 
 #define HORIZONTAL_SPACE_TO_SCREEN 100.f
 #define HORIZONTAL_SPACE_TO_TOASTVIEW 10.f

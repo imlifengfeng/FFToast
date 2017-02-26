@@ -88,8 +88,8 @@
 		6C01B3DE1E5FC8B900E0D020 /* NSString+FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FFToast.m"; sourceTree = "<group>"; };
 		6C01B3E01E5FCA0600E0D020 /* UIImage+FFToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FFToast.h"; sourceTree = "<group>"; };
 		6C01B3E11E5FCA0600E0D020 /* UIImage+FFToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FFToast.m"; sourceTree = "<group>"; };
-		6C01B3E91E5FE0CB00E0D020 /* FFCentreToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFCentreToastView.h; path = FFToast/Assets/FFCentreToastView.h; sourceTree = SOURCE_ROOT; };
-		6C01B3EA1E5FE0CB00E0D020 /* FFCentreToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFCentreToastView.m; path = FFToast/Assets/FFCentreToastView.m; sourceTree = SOURCE_ROOT; };
+		6C01B3E91E5FE0CB00E0D020 /* FFCentreToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFCentreToastView.h; path = FFToast/Classes/FFCentreToastView.h; sourceTree = SOURCE_ROOT; };
+		6C01B3EA1E5FE0CB00E0D020 /* FFCentreToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FFCentreToastView.m; path = FFToast/Classes/FFCentreToastView.m; sourceTree = SOURCE_ROOT; };
 		6C01B3EC1E5FE30200E0D020 /* fftoast_dismiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fftoast_dismiss.png; path = FFToast/Assets/fftoast_dismiss.png; sourceTree = SOURCE_ROOT; };
 		6C01B3ED1E5FE30200E0D020 /* fftoast_dismiss@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_dismiss@2x.png"; path = "FFToast/Assets/fftoast_dismiss@2x.png"; sourceTree = SOURCE_ROOT; };
 		6C01B3EE1E5FE30200E0D020 /* fftoast_dismiss@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fftoast_dismiss@3x.png"; path = "FFToast/Assets/fftoast_dismiss@3x.png"; sourceTree = SOURCE_ROOT; };
