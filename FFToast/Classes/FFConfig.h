@@ -36,9 +36,9 @@ typedef NS_ENUM(NSInteger, FFToastPosition) {
     FFToastPositionBelowStatusBar = 1,
     //显示在状态栏下方+圆角+左右边距
     FFToastPositionBelowStatusBarWithFillet = 2,
-    //显示在屏幕中下方
+    //显示在屏幕底部
     FFToastPositionBottom = 3,
-    //显示在屏幕中下方+圆角
+    //显示在屏幕底部+圆角
     FFToastPositionBottomWithFillet = 4,
     //显示在屏幕中间
     FFToastPositionCentre = 5,

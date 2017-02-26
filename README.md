@@ -3,10 +3,10 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/FFToast.svg)](https://cocoapods.org/pods/FFToast)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/imlifengfeng/FFToast/master/LICENSE)
 
-This is a simple extension of an iOS message notifications that can be used to pop up a prompt at the top or bottom of the screen. You can customize it according to their own display.
+A very powerful iOS message notifications and AlertView extensions. It can be easily realized from the top of the screen, the bottom of the screen and the middle of the screen pops up a notification. You can easily customize the pop-up View.
 
-<img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_demo.gif">
-<img src="http://www.imlifengfeng.com/blog/wp-content/uploads/2017/02/fftoast_screenshots.jpg" width = "70%">
+![gif](https://github.com/imlifengfeng/FFToast/blob/master/screenshots/demo.gif)
+![screenshots](https://github.com/imlifengfeng/FFToast/blob/master/screenshots/screenshots_1.png)
 
 # English instructions
 
@@ -34,7 +34,7 @@ Then run `pod install`.
 
 ### Manual
 
-Add FFToast folder to your project 
+Add FFToast folder to your project
 
 
 ##Usage
@@ -72,27 +72,31 @@ typedef NS_ENUM(NSInteger, FFToastType) {
 };
 ```
 
-for example: 
+for example:
 ```objective-c
 [FFToast showToastWithTitle:@"This is the title" message:@"Message content......." iconImage:[UIImage imageNamed:@"test"] duration:3 toastType:FFToastTypeDefault];
 ```
 Title (title), message (message), icon (iconImage) can be empty, FFToast will be based on specific content to adapt.
 
-If you want to show a message notification below the status bar or below the screen, you can set some properties.
+If you want to show the message below the status bar, the bottom of the screen or the middle of the screen, you can set some properties to achieve.
 Set the display position:
 ```objective-c
 typedef NS_ENUM(NSInteger, FFToastPosition) {
 
     //Displayed at the top of the screen
     FFToastPositionDefault = 0,
-    //Displayed below the status bar
+    //Is displayed below the status bar
     FFToastPositionBelowStatusBar = 1,
     //Displayed below the status bar + rounded corners + left and right margins
     FFToastPositionBelowStatusBarWithFillet = 2,
-    //Displayed in the bottom of the screen
+    //Displayed at the bottom of the screen
     FFToastPositionBottom = 3,
-    //Displayed in the bottom of the screen + rounded
-    FFToastPositionBottomWithFillet = 4
+    //Displayed at the bottom of the screen + fillet
+    FFToastPositionBottomWithFillet = 4,
+    //Displayed in the middle of the screen
+    FFToastPositionCentre = 5,
+    //Displayed in the middle of the screen + fillet
+    FFToastPositionCentreWithFillet = 6
 
 };
 ```
@@ -111,9 +115,9 @@ Some other attributes:
 //Toast text font
 @property (strong, nonatomic) UIFont* messageFont;
 
-//Toast View corner radius
+//Toast View fillet
 @property(assign,nonatomic)CGFloat toastCornerRadius;
-//Toast View transparency
+//Toast View Transparency
 @property(assign,nonatomic)CGFloat toastAlpha;
 
 //Toast shows the length of time
@@ -123,6 +127,15 @@ Some other attributes:
 
 //Toast display position
 @property (assign, nonatomic) FFToastPosition toastPosition;
+//Toast display type
+@property (assign, nonatomic) FFToastType toastType;
+
+//Whether it is automatically hidden. AutoDismiss, enableDismissBtn, dismissBtnImage The three properties are only valid for Toast that pops up from the center of the screen
+@property(assign,nonatomic)BOOL autoDismiss;
+//Whether the hidden button is displayed in the upper right corner
+@property(assign,nonatomic)BOOL enableDismissBtn;
+//Hide the button's icon
+@property (strong, nonatomic) UIImage* dismissBtnImage;
 ```
 
 After setting the properties, you can call the following method to display it:
@@ -132,7 +145,7 @@ After setting the properties, you can call the following method to display it:
  */
 - (void)show;
 ```
-or:
+or：
 ```objective-c
 /**
  Show a Toast
@@ -142,15 +155,40 @@ or:
 - (void)show:(handler)handler;
 ```
 
-for example:
+E.g：
 ```objective-c
-FFToast *toast = [[FFToast alloc]initToastWithTitle:@"This is the title" message:@"Message content......." iconImage:[UIImage imageNamed:@"fftoast_info"]];
+FFToast *toast = [[FFToast alloc]initToastWithTitle:@"title" message:@"Message content......." iconImage:[UIImage imageNamed:@"fftoast_info"]];
 toast.toastPosition = FFToastPositionBelowStatusBarWithFillet;
 toast.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f blue:122.f/255.f alpha:1.f];
 [toast show:^{
-    //Called when you click message notifications
+    //Toast is called when clicked
 }];//[toast show];
 ```
+
+If you want to customize a Toast from the middle, you can call the following method：
+```objective-c
+/**
+ Show a custom Toast in the middle
+
+ @param customToastView Customized ToastView
+ @param autoDismiss Whether it is automatically hidden
+ @param duration Display duration (autoDismiss = NO this parameter will be invalid)
+ @param enableDismissBtn Whether to show the hidden button
+ @param dismissBtnImage Hide button image (enableDismissBtn = NO this parameter will be invalid)
+ @return Toast
+ */
+- (instancetype)initCentreToastWithView:(UIView *)customToastView autoDismiss:(BOOL)autoDismiss duration:(NSTimeInterval)duration enableDismissBtn:(BOOL)enableDismissBtn dismissBtnImage:(UIImage*)dismissBtnImage;
+```
+When you customize Toast from the middle, you can set the above parameters autoDismiss and the parameter enableDismissBtn to NO. And then in your custom View in their own place in the appropriate place to add a close button.
+To close the Toast from the middle, you can call the following method：
+```objective-c
+/**
+ Hide a Toast
+ */
+- (void)dismissCentreToast;
+```
+
+Top, the bottom of the pop-up Toast can not customize View, but for iconImage, Title, message can be set according to need and can be nil, the final Toast will be based on specific content to adapt.
 
 Hide message notifications：
 The default 3 seconds after the automatic disappear, slide up the pop-up message to inform it will disappear
@@ -168,6 +206,8 @@ Usage is provided under the <a href="http://opensource.org/licenses/MIT" target=
 
 
 # 中文使用说明
+
+FFToast是一个非常强大的iOS message notifications和AlertView扩展。它可以很容易实现从屏幕顶部、屏幕底部和屏幕中间弹出一个通知。你可以很容易的自定义弹出的View.
 
 ## 要求
 
@@ -233,13 +273,13 @@ typedef NS_ENUM(NSInteger, FFToastType) {
 };
 ```
 
-例如: 
+例如:
 ```objective-c
 [FFToast showToastWithTitle:@"标题" message:@"消息内容......." iconImage:[UIImage imageNamed:@"test"] duration:3 toastType:FFToastTypeDefault];
 ```
-标题（title）、消息内容（message）、图标（iconImage）均可以为空，FFToast会根据具体的内容进行自适应。
+标题（title）、消息内容（message）、图标（iconImage）均可以为nil，FFToast会根据具体的内容进行自适应。
 
-如果想在状态栏下方或者屏幕中下方显示消息通知，可以通过设置一些属性实现。
+如果想在状态栏下方、屏幕下方或者屏幕中间显示消息通知，可以通过设置一些属性实现。
 设置显示位置:
 ```objective-c
 typedef NS_ENUM(NSInteger, FFToastPosition) {
@@ -250,10 +290,14 @@ typedef NS_ENUM(NSInteger, FFToastPosition) {
     FFToastPositionBelowStatusBar = 1,
     //显示在状态栏下方+圆角+左右边距
     FFToastPositionBelowStatusBarWithFillet = 2,
-    //显示在屏幕中下方
+    //显示在屏幕底部
     FFToastPositionBottom = 3,
-    //显示在屏幕中下方+圆角
-    FFToastPositionBottomWithFillet = 4
+    //显示在屏幕底部+圆角
+    FFToastPositionBottomWithFillet = 4,
+    //显示在屏幕中间
+    FFToastPositionCentre = 5,
+    //显示在屏幕中间+圆角
+    FFToastPositionCentreWithFillet = 6
 
 };
 ```
@@ -284,6 +328,15 @@ typedef NS_ENUM(NSInteger, FFToastPosition) {
 
 //Toast显示位置
 @property (assign, nonatomic) FFToastPosition toastPosition;
+//Toast显示类型
+@property (assign, nonatomic) FFToastType toastType;
+
+//是否自动隐藏，autoDismiss、enableDismissBtn、dismissBtnImage三个属性仅对从屏幕中间弹出的Toast有效
+@property(assign,nonatomic)BOOL autoDismiss;
+//是否在右上角显示隐藏按钮
+@property(assign,nonatomic)BOOL enableDismissBtn;
+//隐藏按钮的图标
+@property (strong, nonatomic) UIImage* dismissBtnImage;
 ```
 
 设置完属性后，就可以调用下面方法将其显示出来:
@@ -313,6 +366,31 @@ toast.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f 
 }];//[toast show];
 ```
 
+如果你想自定义一个从中间弹出的Toast,可以调用下面的方法：
+```objective-c
+/**
+ 在中间显示一个自定义Toast
+
+ @param customToastView 自定义的ToastView
+ @param autoDismiss 是否自动隐藏
+ @param duration 显示时长（autoDismiss = NO时该参数将无效）
+ @param enableDismissBtn 是否显示隐藏按钮
+ @param dismissBtnImage 隐藏按钮图片（enableDismissBtn = NO时该参数将无效）
+ @return Toast
+ */
+- (instancetype)initCentreToastWithView:(UIView *)customToastView autoDismiss:(BOOL)autoDismiss duration:(NSTimeInterval)duration enableDismissBtn:(BOOL)enableDismissBtn dismissBtnImage:(UIImage*)dismissBtnImage;
+```
+你在自定义从中间弹出的Toast时，你可以将上面的参数autoDismiss和参数enableDismissBtn设为NO。然后在你自定义的View中自己在合适的位置添加一个关闭按钮。
+关闭从中间弹出的Toast，可以调用下面的方法：
+```objective-c
+/**
+ 隐藏一个Toast
+ */
+- (void)dismissCentreToast;
+```
+
+顶部、底部弹出的Toast不可自定义View，但是对于iconImage、Title、message均可以根据需要设置并且可以为nil，最终Toast会根据具体的内容进行自适应。
+
 隐藏消息通知：
 默认3秒后自动消失，向上滑动弹出的消息通知它也会消失。
 
@@ -326,5 +404,3 @@ toast.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f 
 ## 许可
 
 该项目在 <a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a> 许可协议下使用.  有关详细信息，请参阅 <a href="https://github.com/imlifengfeng/FFToast/blob/master/LICENSE">LICENSE</a>.
-
-

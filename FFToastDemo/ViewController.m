@@ -228,8 +228,8 @@
     
     [customToastParentView addSubview:customToastView];
     [customToastParentView addSubview: topImgView];
-    customToastParentView.layer.cornerRadius = 5.f;
-    customToastParentView.layer.masksToBounds = YES;
+    customToastView.layer.cornerRadius = 5.f;
+    customToastView.layer.masksToBounds = YES;
     
     
     _customCentreToast = [[FFToast alloc]initCentreToastWithView:customToastParentView autoDismiss:NO duration:0 enableDismissBtn:NO dismissBtnImage:nil];
