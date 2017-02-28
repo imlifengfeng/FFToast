@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.author       = { "imlifengfeng" => "imlifengfeng@gmail.com" }
   s.source       = { :git => 'https://github.com/imlifengfeng/FFToast.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
-  s.source_files = 'FFToast/FFToast/Classes/*.{h,m}','FFToast/FFToast/Category/*.{h,m}'
+  s.source_files = 'FFToast/**/*.{h,m}'
   s.resource_bundles = {
     'FFToast' => ['FFToast/Assets/*.png']
   }
