@@ -7,11 +7,12 @@
 //
 
 #import "UIImage+FFToast.h"
+#import "FFToast.h"
 
 @implementation UIImage (FFToast)
 
 + (UIImage*)imageWithName:(NSString*)name{
-    NSBundle * pbundle = [NSBundle bundleForClass:[self class]];
+    NSBundle * pbundle = [NSBundle bundleForClass:[FFToast class]];
     NSString *bundleURL = [pbundle pathForResource:@"FFToast" ofType:@"bundle"];
     NSBundle *imagesBundle = [NSBundle bundleWithPath:bundleURL];
     UIImage * image = [UIImage imageNamed:name inBundle:imagesBundle compatibleWithTraitCollection:nil];
