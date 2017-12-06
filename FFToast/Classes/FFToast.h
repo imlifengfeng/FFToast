@@ -12,7 +12,7 @@
 @interface FFToast : NSObject
 
 //Toast点击回调
-typedef void(^handler)(void);
+typedef void(^FFHandler)(void);
 
 
 //背景颜色
@@ -98,7 +98,7 @@ typedef void(^handler)(void);
 
  @param handler Toast点击回调
  */
-- (void)show:(handler)handler;
+- (void)show:(FFHandler)handler;
 
 /**
  隐藏一个Toast
