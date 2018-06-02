@@ -15,7 +15,7 @@ A very powerful iOS message notifications and AlertView extensions. It can be ea
 - Requires iOS 8 or later
 - Requires Automatic Reference Counting (ARC)
 
-##Features
+## Features
 
 - Easy to use
 - Can be easily customized
@@ -37,7 +37,7 @@ Then run `pod install`.
 Add FFToast folder to your project
 
 
-##Usage
+## Usage
 ```objective-c
 #import <FFToast/FFToast.h>
 ```
@@ -193,7 +193,7 @@ Top, the bottom of the pop-up Toast can not customize View, but for iconImage, T
 Hide message notifications：
 The default 3 seconds after the automatic disappear, slide up the pop-up message to inform it will disappear
 
-##About
+## About
 
 Author：
 [imlifengfeng](http://www.imlifengfeng.com/blog/)  
@@ -214,7 +214,7 @@ FFToast是一个非常强大的iOS message notifications和AlertView扩展。它
 - 支持iOS 8或更高版本
 - 支持ARC
 
-##特点
+## 特点
 
 - 简单易用
 - 可以很容易自定义
@@ -236,7 +236,7 @@ end
 将FFToast文件夹添加到项目中
 
 
-##使用方法
+## 使用方法
 ```objective-c
 #import <FFToast/FFToast.h>
 ```
@@ -394,7 +394,7 @@ toast.toastBackgroundColor = [UIColor colorWithRed:75.f/255.f green:107.f/255.f 
 隐藏消息通知：
 默认3秒后自动消失，向上滑动弹出的消息通知它也会消失。
 
-##关于
+## 关于
 
 作者：
 [imlifengfeng](http://www.imlifengfeng.com/blog/)  
